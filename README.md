@@ -34,6 +34,25 @@ brew install --cask docker
 open -a Docker
 ```
 
+## Setup rápido (script)
+
+Este repositório inclui um script para automatizar o setup no Apple Silicon:
+
+```bash
+chmod +x bootstrap.sh
+./bootstrap.sh ~/Projetos/Overleaf
+```
+
+O script:
+
+- clona o toolkit (se ainda não existir);
+- roda `bin/init`;
+- ajusta `MONGO_VERSION=8.0.0`;
+- ajusta `SIBLING_CONTAINERS_ENABLED=false`;
+- força `platform: linux/amd64` no `sharelatex`;
+- aplica compatibilidade de parsing para macOS em `lib/shared-functions.sh`;
+- sobe o ambiente com `bin/up -d`.
+
 ## Instalação (passo a passo)
 
 ```bash
